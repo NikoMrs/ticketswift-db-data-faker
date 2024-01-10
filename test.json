@@ -1,0 +1,355 @@
+{
+    "plus_code" : 
+    {
+       "compound_code" : "4JX8+PQ9 Porcido SO, Italy",
+       "global_code" : "8FRF4JX8+PQ9"
+    },
+    "results" : 
+    [
+       {
+          "address_components" : 
+          [
+             {
+                "long_name" : "Variante di Morbegno",
+                "short_name" : "SS38",
+                "types" : 
+                [
+                   "route"
+                ]
+             },
+             {
+                "long_name" : "Morbegno",
+                "short_name" : "Morbegno",
+                "types" : 
+                [
+                   "administrative_area_level_3",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Provincia di Sondrio",
+                "short_name" : "SO",
+                "types" : 
+                [
+                   "administrative_area_level_2",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Lombardia",
+                "short_name" : "Lombardia",
+                "types" : 
+                [
+                   "administrative_area_level_1",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Italy",
+                "short_name" : "IT",
+                "types" : 
+                [
+                   "country",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "23017",
+                "short_name" : "23017",
+                "types" : 
+                [
+                   "postal_code"
+                ]
+             }
+          ],
+          "formatted_address" : "SS38, 23017 Morbegno SO, Italy",
+          "geometry" : 
+          {
+             "bounds" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.1505182,
+                   "lng" : 9.6264518
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.1491181,
+                   "lng" : 9.614039699999999
+                }
+             },
+             "location" : 
+             {
+                "lat" : 46.1500697,
+                "lng" : 9.620198199999999
+             },
+             "location_type" : "GEOMETRIC_CENTER",
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.15116713029149,
+                   "lng" : 9.6264518
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.1484691697085,
+                   "lng" : 9.614039699999999
+                }
+             }
+          },
+          "place_id" : "ChIJJTU1fop0hEcR6M_KrCd2AiQ",
+          "types" : 
+          [
+             "route"
+          ]
+       },
+       {
+          "address_components" : 
+          [
+             {
+                "long_name" : "Porcido",
+                "short_name" : "Porcido",
+                "types" : 
+                [
+                   "locality",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Morbegno",
+                "short_name" : "Morbegno",
+                "types" : 
+                [
+                   "administrative_area_level_3",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Provincia di Sondrio",
+                "short_name" : "SO",
+                "types" : 
+                [
+                   "administrative_area_level_2",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Lombardia",
+                "short_name" : "Lombardia",
+                "types" : 
+                [
+                   "administrative_area_level_1",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Italy",
+                "short_name" : "IT",
+                "types" : 
+                [
+                   "country",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "23017",
+                "short_name" : "23017",
+                "types" : 
+                [
+                   "postal_code"
+                ]
+             }
+          ],
+          "formatted_address" : "23017 Porcido SO, Italy",
+          "geometry" : 
+          {
+             "bounds" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.1495792,
+                   "lng" : 9.617794
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.14894169999999,
+                   "lng" : 9.6163148
+                }
+             },
+             "location" : 
+             {
+                "lat" : 46.149318,
+                "lng" : 9.617138899999999
+             },
+             "location_type" : "APPROXIMATE",
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.1506094302915,
+                   "lng" : 9.618403380291502
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.1479114697085,
+                   "lng" : 9.615705419708497
+                }
+             }
+          },
+          "place_id" : "ChIJVTSO-Yl0hEcR4eLO94GFLpo",
+          "types" : 
+          [
+             "locality",
+             "political"
+          ]
+       },
+       {
+          "address_components" : 
+          [
+             {
+                "long_name" : "23017",
+                "short_name" : "23017",
+                "types" : 
+                [
+                   "postal_code"
+                ]
+             },
+             {
+                "long_name" : "Morbegno",
+                "short_name" : "Morbegno",
+                "types" : 
+                [
+                   "administrative_area_level_3",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Province of Sondrio",
+                "short_name" : "SO",
+                "types" : 
+                [
+                   "administrative_area_level_2",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Lombardy",
+                "short_name" : "Lombardy",
+                "types" : 
+                [
+                   "administrative_area_level_1",
+                   "political"
+                ]
+             },
+             {
+                "long_name" : "Italy",
+                "short_name" : "IT",
+                "types" : 
+                [
+                   "country",
+                   "political"
+                ]
+             }
+          ],
+          "formatted_address" : "23017 Morbegno, Province of Sondrio, Italy",
+          "geometry" : 
+          {
+             "bounds" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.154884,
+                   "lng" : 9.630323799999999
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.104751,
+                   "lng" : 9.557245999999999
+                }
+             },
+             "location" : 
+             {
+                "lat" : 46.128284,
+                "lng" : 9.586250999999999
+             },
+             "location_type" : "APPROXIMATE",
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 46.154884,
+                   "lng" : 9.630323799999999
+                },
+                "southwest" : 
+                {
+                   "lat" : 46.104751,
+                   "lng" : 9.557245999999999
+                }
+             }
+          },
+          "place_id" : "ChIJ4X6LjKB0hEcRgF_hegV4Bhw",
+          "types" : 
+          [
+             "postal_code"
+          ]
+       },
+       {
+          "address_components" : 
+          [
+             {
+                "long_name" : "Italy",
+                "short_name" : "IT",
+                "types" : 
+                [
+                   "country",
+                   "political"
+                ]
+             }
+          ],
+          "formatted_address" : "Italy",
+          "geometry" : 
+          {
+             "bounds" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 47.092,
+                   "lng" : 18.7975999
+                },
+                "southwest" : 
+                {
+                   "lat" : 35.4897,
+                   "lng" : 6.6267201
+                }
+             },
+             "location" : 
+             {
+                "lat" : 41.87194,
+                "lng" : 12.56738
+             },
+             "location_type" : "APPROXIMATE",
+             "viewport" : 
+             {
+                "northeast" : 
+                {
+                   "lat" : 47.092,
+                   "lng" : 18.7975999
+                },
+                "southwest" : 
+                {
+                   "lat" : 35.4897,
+                   "lng" : 6.6267201
+                }
+             }
+          },
+          "place_id" : "ChIJA9KNRIL-1BIRb15jJFz1LOI",
+          "types" : 
+          [
+             "country",
+             "political"
+          ]
+       }
+    ],
+    "status" : "OK"
+ }
