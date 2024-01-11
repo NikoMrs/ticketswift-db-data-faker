@@ -95,7 +95,7 @@ async function generateLocations(num){
         
         const locationData = locationApiJson['results'][0]['address_components'];
 
-        const city = locationData.find(obj => obj['types'].includes("administrative_area_level_3")).long_name;
+        const city = locationData.find(obj => obj.types.includes("administrative_area_level_3")).long_name;
         const route = locationData.find(obj => obj.types.includes("route")).long_name
         const streetNumber = locationData.find(obj => obj.types.includes("street_number"));
         const address = (streetNumber != undefined) ? route + " " + streetNumber.long_name : route;
