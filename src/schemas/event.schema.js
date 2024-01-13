@@ -1,15 +1,24 @@
 const mongoose = require("mongoose");
+const artistSchema = require("./artist.schema").schema
+const locationSchema = require("./location.schema").schema
+
 mongoose.set("strictQuery", true);
 
 const eventSchema = new mongoose.Schema(
     {
         artistId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Artist._id'
+            ref: 'Artist'
+        },
+        artist: {
+            type: artistSchema
         },
         locationId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Location._id'
+        },
+        location: {
+            type: locationSchema
         },
         tickets: [
             {

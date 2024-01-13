@@ -89,9 +89,9 @@ async function generateLocations(num){
         locationApiUrl += "latlng=" + coordinates.latitude + "," + coordinates.longitude;
         locationApiUrl += "&result_type=route|administrative_area_level_3|country|postal_code"
         locationApiUrl += "&key=" + process.env.GOOGLE_MAPS_API_KEY;
-        const locationApiResponse = await fetch(locationApiUrl);
-        const locationApiJson = await locationApiResponse.json();
-        //const locationApiJson = require('../test.json');
+        //const locationApiResponse = await fetch(locationApiUrl);
+        //const locationApiJson = await locationApiResponse.json();
+        const locationApiJson = require('../test.json');
         
         const locationData = locationApiJson['results'][0]['address_components'];
 
@@ -155,16 +155,19 @@ async function generateEvents(num){
     for (let i = 0; i < num; i++) {
 
         const randomArtist = allArtists[getRandomInt(allArtists.length)];
+        const artist = randomArtist;
         const artistId = randomArtist['_id'];
 
         const randomVenue = allVenue[getRandomInt(allVenue.length)];
+        const location = randomVenue;
         const locationId = randomVenue['_id'];
+        const locationCapacity = randomVenue['capacity'];
 
         let tickets = [];
         standardPrice = faker.number.int({min: 25, max: 150})
         tickets.push({
             name: "Standard Ticket",
-            availability: faker.number.int({min: 0, max: randomVenue['capacity']}),
+            availability: faker.number.int({min: 0, max: locationCapacity}),
             price: standardPrice
         });
         if(getRandomInt(3) == 2){
@@ -184,7 +187,9 @@ async function generateEvents(num){
     
         events.push({
             artistId,
+            artist,
             locationId,
+            location,
             tickets,
             saleStart,
             saleEnd,
@@ -193,6 +198,8 @@ async function generateEvents(num){
             subgenre,
             coordinates
         });
+
+        console.log(events);
     }
   
     return events;
@@ -271,4 +278,4 @@ async function setUp(num){
 
 }
 
-setUp(5)
+setUp(1)

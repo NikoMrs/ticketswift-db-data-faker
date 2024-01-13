@@ -54,4 +54,4 @@ async function getDbUsers(query = {}) {
   return result;
 }
 
-module.exports = { client, ObjectId, getDbLocations, getDbEvents, getDbArtists, getDbUsers};
+module.exports = { client, ObjectId, getDbLocations, getDbEvents, getDbArtists, getDbUsers };
