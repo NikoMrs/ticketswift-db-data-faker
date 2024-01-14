@@ -168,13 +168,15 @@ async function generateEvents(num){
         tickets.push({
             name: "Standard Ticket",
             availability: faker.number.int({min: 0, max: locationCapacity}),
-            price: standardPrice
+            price: standardPrice,
+            _id: new ObjectId()
         });
         if(getRandomInt(3) == 2){
             tickets.push({
                 name: "Premium Ticket",
                 availability: faker.number.int(),
-                price: faker.number.int({min: standardPrice + 25, max: standardPrice + 125})
+                price: faker.number.int({min: standardPrice + 25, max: standardPrice + 125}),
+                _id: new ObjectId()
             });
         }
 
@@ -199,7 +201,6 @@ async function generateEvents(num){
             coordinates
         });
 
-        console.log(events);
     }
   
     return events;
@@ -278,4 +279,4 @@ async function setUp(num){
 
 }
 
-setUp(1)
+setUp(5)
