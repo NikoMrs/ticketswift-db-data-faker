@@ -3,6 +3,14 @@ mongoose.set("strictQuery", true);
 
 const artistSchema = new mongoose.Schema(
     {
+        createdAt: {
+          type: Date,
+          default: Date.now
+        },
+        modifiedAt: {
+          type: Date,
+          default: Date.now
+        },
         name: {
             type: String
         },

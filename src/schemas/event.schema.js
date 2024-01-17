@@ -6,6 +6,14 @@ mongoose.set("strictQuery", true);
 
 const eventSchema = new mongoose.Schema(
     {
+        createdAt: {
+          type: Date,
+          default: Date.now
+        },
+        modifiedAt: {
+          type: Date,
+          default: Date.now
+        },
         artistId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Artist'

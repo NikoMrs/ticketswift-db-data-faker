@@ -18,7 +18,7 @@ function getRandomInt(max) {
 const connectDB = async () => {
     try {
 
-        await mongoose.connect(process.env.DATABASE_URL_TEST);
+        await mongoose.connect(process.env.DATABASE_URL);
 
         console.log("connected to db");
     } catch (error) {
@@ -238,11 +238,14 @@ async function generatePurchases(num){
         }
 
         const date = faker.date.past();
+
+        const state = "completed";
     
         purchases.push({
             cart,
             userId,
-            date
+            date,
+            state
         });
     }
   

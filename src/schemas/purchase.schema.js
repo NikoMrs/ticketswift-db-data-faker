@@ -3,6 +3,14 @@ mongoose.set("strictQuery", true);
 
 const purchaseSchema = new mongoose.Schema(
     {
+        createdAt: {
+          type: Date,
+          default: Date.now
+        },
+        modifiedAt: {
+            type: Date,
+            default: Date.now
+        },
         cart: {
             type: [{
                 ticketId: {
@@ -22,6 +30,10 @@ const purchaseSchema = new mongoose.Schema(
         },
         date: {
             type: Date
+        },
+        state: {
+            type: String,
+            enum: ['pending', 'completed', 'failed']
         }
     },
     {
