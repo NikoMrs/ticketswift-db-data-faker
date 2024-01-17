@@ -28,6 +28,9 @@ const eventSchema = new mongoose.Schema(
         location: {
             type: locationSchema
         },
+        name: {
+            type: String
+        },
         tickets: [
             {
                 name: {
