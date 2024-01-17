@@ -128,7 +128,7 @@ async function generateArtists(num){
         const lastName = faker.person.lastName();
         const name = firstName + " " + lastName;
         const awards = [];
-        const socialName = firstName + "_" + lastName;
+        const socialName = name.replace(/ /g, "_");
         const socialMedia = {
             twitter: `@${socialName}`,
             facebook: socialName,
@@ -180,6 +180,8 @@ async function generateEvents(num){
             });
         }
 
+        let name = faker.word.words({count: {min: 3, max: 5}});
+        name = name.charAt(0).toUpperCase() + name.slice(1);
         const saleStart = faker.date.past();
         const saleEnd = faker.date.future();
         const date = faker.date.future();
@@ -192,6 +194,7 @@ async function generateEvents(num){
             artist,
             locationId,
             location,
+            name,
             tickets,
             saleStart,
             saleEnd,
