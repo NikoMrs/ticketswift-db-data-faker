@@ -3,18 +3,18 @@ mongoose.set("strictQuery", true);
 
 const userSchema = new mongoose.Schema(
     {
-        createdAt: {
+        createdOn: {
           type: Date,
           default: Date.now
         },
-        modifiedAt: {
+        modifiedOn: {
           type: Date,
           default: Date.now
         },
         email: {
             type: String
         },
-        pwd: {
+        password: {
             type: String
         }
     },

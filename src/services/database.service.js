@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { MongoClient, ObjectId } = require("mongodb");
 
-const client = new MongoClient(process.env.DATABASE_URL_TEST, {
+const client = new MongoClient(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -9,7 +9,7 @@ const client = new MongoClient(process.env.DATABASE_URL_TEST, {
 async function getDbLocations(query = {}) {
 
   await client.connect();
-  const database = client.db("test");
+  const database = client.db("Shop");
   const collection = database.collection("locations");
   const result = await collection.find(query).toArray();
 
@@ -21,7 +21,7 @@ async function getDbLocations(query = {}) {
 async function getDbEvents(query = {}) {
 
   await client.connect();
-  const database = client.db("test");
+  const database = client.db("Shop");
   const collection = database.collection("events");
   const result = await collection.find(query).toArray();
 
@@ -33,7 +33,7 @@ async function getDbEvents(query = {}) {
 async function getDbArtists(query = {}) {
 
   await client.connect();
-  const database = client.db("test");
+  const database = client.db("Shop");
   const collection = database.collection("artists");
   const result = await collection.find(query).toArray();
 
@@ -45,7 +45,7 @@ async function getDbArtists(query = {}) {
 async function getDbUsers(query = {}) {
 
   await client.connect();
-  const database = client.db("test");
+  const database = client.db("Shop");
   const collection = database.collection("users");
   const result = await collection.find(query).toArray();
 

@@ -1,6 +1,6 @@
 const { fakerIT: faker } = require('@faker-js/faker');
 const mongoose = require('mongoose');
-const crypto = require('crypto')
+const bcrypt = require('bcrypt');
 
 const { client, ObjectId, getDbLocations, getDbEvents, getDbArtists, getDbUsers} = require("./services/database.service");
 
@@ -33,12 +33,13 @@ async function generateUsers(num){
     for (let i = 0; i < num; i++) {
 
         const email = faker.internet.email();
-        const password = faker.lorem.words(5);
-        const pwd = crypto.createHash('sha256').update(password).digest('hex');
+        const pwd = faker.lorem.words(5);
+        const salt = await bcrypt.genSalt();
+        const password = await bcrypt.hash(pwd, salt);
     
         users.push({
             email,
-            pwd,
+            password,
         });
     }
   
@@ -89,9 +90,9 @@ async function generateLocations(num){
         locationApiUrl += "latlng=" + coordinates.latitude + "," + coordinates.longitude;
         locationApiUrl += "&result_type=route|administrative_area_level_3|country|postal_code"
         locationApiUrl += "&key=" + process.env.GOOGLE_MAPS_API_KEY;
-        //const locationApiResponse = await fetch(locationApiUrl);
-        //const locationApiJson = await locationApiResponse.json();
-        const locationApiJson = require('../test.json');
+        const locationApiResponse = await fetch(locationApiUrl);
+        const locationApiJson = await locationApiResponse.json();
+        //const locationApiJson = require('../test.json');
         
         const locationData = locationApiJson['results'][0]['address_components'];
 
@@ -183,8 +184,9 @@ async function generateEvents(num){
         let name = faker.word.words({count: {min: 3, max: 5}});
         name = name.charAt(0).toUpperCase() + name.slice(1);
         const saleStart = faker.date.past();
-        const saleEnd = faker.date.future();
-        const date = faker.date.future();
+        const today = new Date();
+        const saleEnd = faker.date.between({from: today, to: new Date().setDate(today.getDate()+5)});
+        const date = faker.date.between({from: saleEnd, to: new Date().setDate(today.getDate()+6)});
         const genre = faker.commerce.department();
         const subgenre = [faker.commerce.department()];
         const coordinates = randomVenue['coordinates'];
@@ -230,10 +232,13 @@ async function generatePurchases(num){
             const eventTickets = randomEvent['tickets'];
             const randomTicket = eventTickets[getRandomInt(eventTickets.length)];
 
+            const quantity = faker.number.int({min: 0, max: Math.min(randomTicket['availability'], 5)});
+            const price = randomTicket['price'] * quantity;
+
             const item = {
                 ticketId: randomTicket['_id'],
-                quantity: faker.number.int({min: 0, max: randomTicket['availability']}),
-                price: faker.commerce.price()
+                quantity: quantity,
+                price: price
             };
 
             cart.push(item);
@@ -265,8 +270,8 @@ async function setUp(num){
     await User.insertMany(newUsers);
     console.log("New users created successfully")
 
-    const newLocations = await generateLocations(num);
-    await Location.insertMany(newLocations);
+    //const newLocations = await generateLocations(num);
+    //await Location.insertMany(newLocations);
     console.log("New locations created successfully")
 
     const newArtists = await generateArtists(num);
