@@ -150,6 +150,7 @@ async function generateArtists(num){
 async function generateEvents(num){
 
     const events = [];
+    const genres = ["Sport", "Music", "Arts Theatre", "Film"]
     const allArtists = await getDbArtists();
     const allVenue = await getDbLocations();
   
@@ -184,13 +185,17 @@ async function generateEvents(num){
         let name = faker.word.words({count: {min: 3, max: 5}});
         name = name.charAt(0).toUpperCase() + name.slice(1);
         const saleStart = faker.date.past();
-        const today = new Date();
-        const saleEnd = faker.date.between({from: today, to: new Date().setDate(today.getDate()+5)});
-        const date = faker.date.between({from: saleEnd, to: new Date().setDate(today.getDate()+6)});
-        const genre = faker.commerce.department();
+        const today = new Date(new Date().setDate(new Date().getDate()+1));
+        const saleEnd = faker.date.between({from: today, to: new Date().setDate(today.getDate()+4)});
+        const date = faker.date.between({from: saleEnd, to: new Date().setDate(today.getDate()+5)});
+        const genre = genres[getRandomInt()];
         const subgenre = [faker.commerce.department()];
         const coordinates = randomVenue['coordinates'];
     
+        console.log(saleEnd);
+        console.log(date);
+        console.log("-------------------------------------");
+
         events.push({
             artistId,
             artist,
@@ -267,7 +272,7 @@ async function setUp(num){
     connectDB()
 
     const newUsers = await generateUsers(num);
-    await User.insertMany(newUsers);
+    //await User.insertMany(newUsers);
     console.log("New users created successfully")
 
     //const newLocations = await generateLocations(num);
@@ -275,15 +280,15 @@ async function setUp(num){
     console.log("New locations created successfully")
 
     const newArtists = await generateArtists(num);
-    await Artist.insertMany(newArtists);
+    //await Artist.insertMany(newArtists);
     console.log("New artists created successfully")
 
     const newEvents = await generateEvents(num);
-    await Event.insertMany(newEvents);
+    //await Event.insertMany(newEvents);
     console.log("New events created successfully")
 
     const newPurchases = await generatePurchases(num);
-    await Purchase.insertMany(newPurchases);
+    //await Purchase.insertMany(newPurchases);
     console.log("New purchases created successfully")
 
     process.exit(0);
